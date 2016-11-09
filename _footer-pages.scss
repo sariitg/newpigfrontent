@@ -1,0 +1,444 @@
+.template-pages-layout-footerLayoutPage,
+.template-pages-layout-singleSlotLayoutWithRightBar,
+.template-pages-layout-singleSlotLayout1Page,
+.template-pages-layout-newsReleasesPage,
+.template-pages-layout-mediaCenterPage,
+.template-pages-category-allCategoriesPage {
+	.breadcrumb-container {
+		@include breakpoint(small-medium) {
+			display: block;
+			padding: 0 15px 0 10px;
+		}
+	}
+	.breadcrumb {
+		li {
+			&,
+			&:before {
+				display: none;
+			}
+
+			a {
+				text-decoration: underline;
+
+				&.last,
+				&:hover {
+					text-decoration: none;
+				}
+			}
+
+			&:nth-last-of-type(2) {
+				display: inline;
+				position: relative;
+
+				a {
+					display: inline;
+
+					@include breakpoint(small-medium) {
+						color: $blue-dark;
+						font-size: $font-size-base;
+						font-family: $font-family-serif-bold;
+						padding-left: 20px;
+						text-decoration: none;
+
+						&:before {
+							@include icon;
+
+							// .icon-np-arrow-left
+							content: "\e60c";
+							color: $blue-dark;
+							font-size: 2rem;
+							left: 0;
+							position: absolute;
+							top: 0;
+						}
+					}
+				}
+			}
+		}
+
+		@include breakpoint(large) {
+			li {
+				&,
+				&:before {
+					display: inline;
+				}
+
+				&:nth-last-of-type(2) {
+					margin-left: 0;
+				}
+			}
+
+		}
+	}
+
+	.breadcrumb-email-print {
+		@include breakpoint(small-medium) {
+			li:nth-of-type(2) {
+				display: none;
+			}
+		}
+	}
+}
+
+.terms-privacy,
+.helpFAQ {
+	h1 {
+		color: $black;
+		display: inline-block;
+		margin: 15px 0 0 15px;
+	}
+	.content {
+		padding: 15px;
+
+		p a:link {
+			text-decoration: underline;
+		}
+	}
+	.customer-service-container {
+		@include make-lg-column(3);
+		
+		@include breakpoint(small-medium) {
+			display: none;
+		}
+		
+		margin-top: 64px;
+
+		.customer-service-block {
+			@include customer-service-block;
+
+			.customer-service-links a:link {
+				// on the footer page we need the other ways to contact us underlined and shifted over
+				text-decoration: underline;
+				margin-left: 19px;
+			}
+		}
+		.noGuff .content {
+			padding: 0;
+			background-color: $gray-extra-light;
+			margin-top:	15px;
+
+			ul li {
+				margin-left: 20px;
+			}
+		}
+
+	}
+	.helpFAQ-content {
+		@include make-lg-column(9);
+		@include breakpoint(small-medium) {
+			@include make-xs-column(12);
+		}
+	}
+
+}
+
+
+/* code for general footer pages*/
+.footer-pages-content {
+	.custom-banner-component .details p {
+		font-family: $font-family-sans-serif;
+		font-size: $font-size-base;
+	}
+
+	h1 {
+		color: $black;
+		margin-bottom: 25px;
+	}
+	.panel-wrapper {
+		ol li {
+			list-style-type: upper-latin;
+			margin-left: 20px;
+			font-family: $font-family-sans-serif-bold;
+			span {
+				font-family: $font-family-sans-serif;
+			}
+		}
+
+		ul {
+			margin-left: 20px;
+
+			li {
+				@include bulleted-list;
+			}
+		}
+
+		.no-list-styling{
+			ul {
+				margin-left: 0;
+			}
+
+			li {
+				list-style-type: none;
+			}
+		}
+
+		> .panel {
+			display: inline-block;
+			padding: 15px 15px 20px 15px;
+			width: 100%;
+
+			h4 {
+				margin-top: 0;
+			}
+
+			.content {
+				//hack to make buttons ~same size
+				.btn-primary {
+					padding: 10px 43px;
+				}
+			}
+		}
+
+		.grey {
+			background-color: $gray-light;
+		}
+
+		.portrait {
+			padding: 20px;
+
+			a {
+				text-decoration: underline;
+			}
+
+			h3 {
+				margin-top: 0;
+			}
+		}
+
+		.title {
+			text-transform: uppercase;
+			color: $gray-medium;
+			font-family: $font-family-sans-serif-bold;
+			margin-top: 5px;
+			display: block;
+		}
+	}
+
+	//for inline images
+	img {
+		margin: auto;
+		display: block;
+		max-width: 100%;
+	}
+	//for images beside content
+	.cmsimage {
+		img {
+			float:left;
+			margin-right: 20px;
+			margin-top: 4px;
+			margin-bottom: 50px;
+			width: 135px;
+		}
+	}
+
+	.navigation-panel {
+		display: none;
+
+		@include breakpoint(medium) {
+			display: block;
+		}
+
+		table {
+			width: 100%;
+		}
+
+		.panel-heading {
+			background: $white;
+			padding: 0;
+		}
+
+		.menu-trigger {
+			display: none;
+		}
+	}
+
+	.hero-block {
+		margin-bottom: 10px;
+
+		img{
+			float: none;
+			margin-bottom: 0;
+			margin-top: 0;
+			width: 100%;
+		}
+	}
+
+	.middle2 {
+		@include make-md-column(8);
+	}
+
+	.middle1 {
+		@include make-md-column(12);
+	}
+	.right-side-column {
+		@include make-md-column(4);
+
+		.customer-service-container {
+			display: none;
+
+			@include breakpoint(large) {
+				display: block;
+				margin-top: 82px;
+
+				.customer-service-block {
+					@include customer-service-block;
+
+					.customer-service-links a:link {
+						text-decoration: underline;
+						margin-left: 19px;
+					}
+				}
+			}
+		}
+	}
+
+	.row-wrapper {
+		margin-right: -20px;
+		margin-left: -20px;
+		border-top: 10px solid $gray-light;
+		padding: 10px;
+		.h4 {
+			padding-left: 10px;
+			display: block;
+		}
+		p, >ul {
+			padding-left: 10px;
+		}
+
+		hr {
+			margin: 10px 0;
+		}
+		table {
+			width: 100%;
+			table-layout: fixed;
+
+			@include breakpoint(small-only) {
+				td {
+					display: block;
+					padding: 0 10px;
+					width: 100%;
+				}
+			}
+
+			@include breakpoint(medium) {
+				.h5 {
+					font-size: 1.2rem;
+				}
+				tr {
+					td {
+						padding-right: 5px;
+						padding-left: 5px;
+						vertical-align: top;
+
+						&:nth-child(1) {
+							padding-left: 10px;
+						}
+
+						&:nth-child(2) {
+							border-left: 1px solid $gray-light;
+							border-right: 1px solid $gray-light;
+						}
+
+						&:nth-child(3) {
+							padding-right: 10px;
+						}
+					}
+				}
+				//make top hrs the same distance on left and right as the hr should be every other row
+				tr:nth-child(odd){
+					td:nth-child(1){
+						padding-right: 10px;
+					}
+				}
+			}
+
+			@include breakpoint(large) {
+				.h5 {
+					font-size: 1.3rem;
+				}
+
+				tr {
+					td {
+						padding-right: 20px;
+						padding-left: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// Overriding inline CMS content for smaller devices
+.pageLabel--customerservice-federalShippingOrdering {
+	@include breakpoint(small-only) {
+		.middle2 {
+			h5 {
+				margin-bottom: 0 !important;
+			}
+		}
+	}
+}
+
+.pageLabel--customerservice-discountPrograms {
+	@include breakpoint(small-only) {
+		.middle1 {
+			.btn {
+				margin: 0 0 20px !important;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.multiFooter{
+	@include breakpoint(small-only){
+		.mobileFooter{
+			display: block;
+			text-align: center;
+			font-weight: bold;
+			a.footerTwo{
+				display: block;
+				font-size: 18px;
+				margin: 1% 5% 5% 5%;
+			}
+			.last{
+				span:first-of-type{ display: none; }
+				span{
+					color: white;
+					margin: 5px;
+				}
+				font-size: 10px;
+				a{
+					text-decoration: underline;
+				}
+			}
+			.footerFour{
+				a{
+					display: none;
+				}
+				font-size: 11px;
+			}
+		}
+		.regularFooter{
+			display: none;
+		}
+	}
+	@include breakpoint(medium){
+		.mobileFooter{
+			display: none;
+		}
+		.regularFooter{
+			display: block;
+		}
+	}
+}
+
+.hrFooter{
+	@include breakpoint(medium){
+		display: block;
+	}
+	@include breakpoint(small-only){
+		display: none;
+	}
+}
