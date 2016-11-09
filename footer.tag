@@ -58,12 +58,7 @@
 
 <div class="footer-two">
 	<div class="container-fluid multiFooter">
-		<div class="mobileFooter">
-			<a class="footerTwo" href="/customerservice/contactUs">Contact Us</a>
-			<a class="footerTwo" href="/about/ourHistory">Our History</a>
-			<a class="footerTwo" href="/about/careers-newpig-page">Careers</a>
-			<a class="footerTwo" href="/customerservice/returns">Returns</a>
-			<a class="footerTwo" href="/ourGuarantee" class="noRiskGuaranteeLink" data-toggle="modal" data-target="#ourGuarantee">No Guff&trade; Guarantee</a>
+		<div class="mobileFooter footerTwo">
 		</div>
 		<div class="regularFooter">
 			<div id="footer-nav-accordion" class="row panel-group" role="tablist">
@@ -219,8 +214,6 @@
 		<div class="row multiFooter">
 			<div class="mobileFooter last">
 				<div class="footer-privacy footerFour">
-					<p>One Pork Avenue &bull; PO Box 304 &bull; Tipton, PA 16684-0304</p>
-					<p>1-855-493-HOGS (493-4647) &bull; hothogs@newpig.com</p>
 					<br>
 					<cms:pageSlot position="Footer-LegalInfo" var="feature" element="div" limit="1">
 						<cms:component component="${feature}" />

@@ -397,11 +397,6 @@
 			display: block;
 			text-align: center;
 			font-weight: bold;
-			a.footerTwo{
-				display: block;
-				font-size: 18px;
-				margin: 1% 5% 5% 5%;
-			}
 			.last{
 				span:first-of-type{ display: none; }
 				span{
@@ -422,6 +417,13 @@
 		}
 		.regularFooter{
 			display: none;
+		}
+	}
+	.footerTwo{
+		a{
+			display: block;
+			font-size: 18px;
+			margin: 1% 5% 5% 5%;
 		}
 	}
 	@include breakpoint(medium){
