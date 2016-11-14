@@ -1,0 +1,114 @@
+.page-search {
+    .results {
+        background-color: white;
+        padding: 5px 20px;
+        h1 {
+            color: $black;
+            margin-bottom: 19px;
+            small {
+                color: $black;
+            }
+        }
+    }
+    #resultsList {
+	    
+	    @include breakpoint(medium-only) {
+			.product-block-column {
+				width: calc(100% / 2);
+    			border: 0;
+    			border-bottom: 1px solid $gray-light;
+    			padding-bottom: 10px;
+    			&:after {
+					content:none;
+				}
+				&:first-child {
+					@include grey-vertical-border;
+				}
+				&:nth-child(2) {
+					@include grey-vertical-border;
+				}
+				.product-block {
+					height: 450px;
+				}
+				&.empty-column {
+					border: 0;
+					
+					&:after {
+						display: none;
+					}
+				}
+				.product-flag,
+				.product-code {
+					font-size: 1.5rem;
+				}
+				.product-information {
+					height: 250px;
+					.product-price {
+						font-size: 1.5rem;
+					}
+				}
+				.product-attributes {
+					padding: 0 0 0 30px;
+				}
+				.product-name {
+					font-size: 1.7rem;
+				}
+			}
+	    }
+	    
+    }/*End of [MR-470]*/
+    
+}
+
+.page-searchEmpty {
+    .did-you-mean-heading {
+        color: $black;
+        margin-bottom: 35px;
+        a {
+            text-decoration: underline;
+            color: $blue-dark;
+            &:hover {
+                color: $blue-pig;
+            }
+        }
+    }
+    .customer-service-block {
+        .customer-service-links {
+            display: none;
+        }
+    }
+    .no-results-container {
+        .siteSearch {
+            width: 60%;
+            padding: 0px;
+            @include breakpoint(small-medium) {
+            	width: 100%;
+            	margin: 0 0 15px;
+            }
+        }
+    }
+    .no-results-page {/*Start of [MR-470]*/
+    	@include breakpoint(small-only) {
+	    	.no-results-content,
+	    	.customer-service-container {
+	    		width: 100%;
+	    	}
+	    	.empty-search-suggestion {
+	    		margin-top: 10px;
+	    	}
+	    }//end of small-only
+	    @include breakpoint(medium-only) {
+	    	.no-results-content {
+	    		width: 65%;
+	    	}
+	    	.customer-service-container {
+	    		width: 35%;
+	    	}
+	    	.product-block-grid-container {
+	    		padding-left: 0;
+	    		padding-right: 0;
+	    	}
+			
+		}//end of medium-only
+    }/*End of [MR-470]*/
+}
